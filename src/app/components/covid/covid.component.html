@@ -1,0 +1,71 @@
+<div class="my-bg-dark-3">
+    <div class="container">
+        <div class="row py-5">
+            <form class="col-md-3 text-white my-bg-dark-2">
+                <p class=" text-center titulo">Filtrar tabla</p>
+                <div class="form-row">
+                    <div id="ubicacion" class="form-group col-md-12">
+                        <select id="countrySelect" class="form-control my-control" name="countrySelect" [(ngModel)]="countrySelect" (change)="filterCountry()">
+                            <option *ngFor="let country of listCountriesBackup" [ngValue]="country['Country_text']">{{country["Country_text"]}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <button id="totalCase" class="btn btn-outline-success form-control"
+                            [ngClass]="{ 'active' : totalCases }" (click)="totalCases = !totalCases" type="button"><i
+                                class="far fa-check-circle"></i> Casos Confirmados</button>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <button class="btn btn-outline-success form-control" [ngClass]="{ 'active' : recovered }"
+                            (click)="recovered = !recovered" type="button"><i class="fas fa-heartbeat"></i>
+                            Curados</button>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <button class="btn btn-outline-success form-control" [ngClass]="{ 'active' : deaths }"
+                            (click)="deaths = !deaths" type="button"><i class="fas fa-skull"></i> Muertes</button>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <button class="btn btn-outline-success form-control" [ngClass]="{ 'active' : newCases }"
+                            (click)="newCases = !newCases" type="button"><i class="fas fa-plus"></i> Nuevos
+                            Casos</button>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <button class="btn btn-outline-success form-control" [ngClass]="{ 'active' : newDeaths }"
+                            (click)="newDeaths = !newDeaths" type="button"><i class="fas fa-plus"></i> Nuevas
+                            Muertes</button>
+                    </div>
+                </div>
+            </form>
+            <div class="col-md-9 my-bg-dark-2 ">
+                <p class="text-white text-center titulo">Estadisticas del Coronavirus</p>
+                <div id="tabla-scroll" class="table-responsive">
+                    <table class="table text-white text-center">
+                        <thead>
+                            <tr>
+                                <td><strong>Ubicacion</strong></td>
+                                <td *ngIf="totalCases"><strong>Confirmados</strong></td>
+                                <td *ngIf="recovered"><strong>Curados</strong></td>
+                                <td *ngIf="deaths"><strong>Muertes</strong></td>
+                                <td *ngIf="newCases"><strong>Nuevos Casos</strong></td>
+                                <td *ngIf="newDeaths"><strong>Nuevas Muertes</strong></td>
+                            </tr>
+                        </thead>
+                        <tbody id="table-covid">
+                            <tr *ngFor="let item of listCountries">
+                                <td>{{item["Country_text"]}}</td>
+                                <td *ngIf="totalCases">{{item["Total Cases_text"]}}</td>
+                                <td *ngIf="recovered">{{item["Total Recovered_text"]}}</td>
+                                <td *ngIf="deaths">{{item["Total Deaths_text"]}}</td>
+                                <td *ngIf="newCases">{{item["New Cases_text"]}}</td>
+                                <td *ngIf="newDeaths">{{item["New Deaths_text"]}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

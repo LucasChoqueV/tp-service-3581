@@ -1,0 +1,95 @@
+<div class="bg-gradiant">
+    <div class="container">
+        <div *ngIf="!show" class="col-md-6 offset-md-3">
+            <button class="btn btn-outline-light btn-lg my-5 p-3 w-100" (click)="loadHoroscope()">Ver
+                Horoscopos</button>
+        </div>
+        <div class="row">
+            <div *ngIf="show" class="col-md-12 my-5">
+                <p class="text-center text-white titulo">Signos del Zodiaco</p>
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="row text-center">
+                            <div class="col-md-12 py-2">
+                                <img src="../../../assets/img/signos/aries.png">
+                                <button class="btn btn-outline-light w-50 ml-1 " (click)="showSingleHoroscope(0)">
+                                    Aries</button>
+                            </div>
+                            <div class="col-md-12 py-2">
+                                <img src="../../../assets/img/signos/tauro.png">
+                                <button class="btn btn-outline-light w-50 ml-1" (click)="showSingleHoroscope(1)">
+                                    Tauro</button>
+                            </div>
+                            <div class="col-md-12 py-2">
+                                <img src="../../../assets/img/signos/gemini.png">
+                                <button class="btn btn-outline-light w-50 ml-1" (click)="showSingleHoroscope(2)">
+                                    Geminis</button>
+                            </div>
+                            <div class="col-md-12 py-2">
+                                <img src="../../../assets/img/signos/cancer.png">
+                                <button class="btn btn-outline-light w-50 ml-1" (click)="showSingleHoroscope(3)">
+                                    Cancer</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="row text-center">
+                            <div class="col-md-12 py-2">
+                                <img src="../../../assets/img/signos/leo.png">
+                                <button class="btn btn-outline-light w-50 ml-1 " (click)="showSingleHoroscope(4)">
+                                    Leo</button>
+                            </div>
+                            <div class="col-md-12 py-2">
+                                <img src="../../../assets/img/signos/virgo.png">
+                                <button class="btn btn-outline-light w-50 ml-1" (click)="showSingleHoroscope(5)">
+                                    Virgo</button>
+                            </div>
+                            <div class="col-md-12 py-2">
+                                <img src="../../../assets/img/signos/libra.png">
+                                <button class="btn btn-outline-light w-50 ml-1" (click)="showSingleHoroscope(6)">
+                                    Libra</button>
+                            </div>
+                            <div class="col-md-12 py-2">
+                                <img src="../../../assets/img/signos/scorpio.png">
+                                <button class="btn btn-outline-light w-50 ml-1" (click)="showSingleHoroscope(7)">
+                                    Scorpio</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <div class="row text-center">
+                            <div class="col-sm-6 col-md-12 py-2">
+                                <img src="../../../assets/img/signos/sagittarius.png">
+                                <button class="btn btn-outline-light w-50 ml-1 " (click)="showSingleHoroscope(8)">
+                                    Sagitario</button>
+                            </div>
+                            <div class="col-sm-6 col-md-12 py-2">
+                                <img src="../../../assets/img/signos/capricorn.png">
+                                <button class="btn btn-outline-light w-50 ml-1" (click)="showSingleHoroscope(9)">
+                                    Capricornio</button>
+                            </div>
+                            <div class="col-sm-6 col-md-12 py-2">
+                                <img src="../../../assets/img/signos/aquarius.png">
+                                <button class="btn btn-outline-light w-50 ml-1" (click)="showSingleHoroscope(10)">
+                                    Acuario</button>
+                            </div>
+                            <div class="col-sm-6 col-md-12 py-2">
+                                <img src="../../../assets/img/signos/pisces.png">
+                                <button class="btn btn-outline-light w-50 ml-1" (click)="showSingleHoroscope(11)">
+                                    Piscis</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="showHoroscope" class="card col-md-10 offset-md-1 my-5 p-0 text-white shadow-light">
+                <div class="card-header titulo shadow-light"><strong>{{singleHoroscope.title}}</strong></div>
+                <div class="card-body ">
+                    <p class="card-text my-text-2">{{singleHoroscope.date}}</p>
+                    <p class="card-text my-text" [innerHTML]=singleHoroscope.horoscope></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

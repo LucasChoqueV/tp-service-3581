@@ -1,0 +1,32 @@
+<div class="container-fluid imgFondo">
+  <div class="row">
+    <div class="col-md-12 my-bg-dark-2">
+      <nav class="navbar navbar-expand p-0">
+        <ul class="navbar-nav m-auto text-white">
+          <li class="nav-item">
+            <a class="nav-link btn btn-lg px-4 mx-1 my-text btn-nav-news" (click)="loadNews('soccer')"><i class="fas fa-futbol d-block icon-size-nav"></i>Futbol</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-lg px-4 mx-1 my-text btn-nav-news" (click)="loadNews('tennis')"><i class="fas fa-baseball-ball d-block icon-size-nav"></i>Tenis</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-lg px-4 mx-1 my-text btn-nav-news" (click)="loadNews('basketball')"><i class="fas fa-basketball-ball d-block icon-size-nav"></i>Básquetbol</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12" *ngFor="let item of listNews">
+          <div class="card text-white p-5 my-5" style="background: rgba(6, 23, 31, 0.7);">
+            <div class="card-body">
+              <p id="NewsTitle" class="card-title titulo"><strong>{{item.tit}}</strong></p>
+              <p class="card-text my-text-2" [innerHTML]=item.con></p>
+            </div>
+            <img src={{item.img}} class="card-img-bottom">
+            <p class="my-text-2">{{item.des}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,128 @@
+<div class="my-bg-dark-3">
+    <div class="container">
+        <div class="row pt-5">
+            <div class="d-none d-md-block col-md-8">
+                    <div class="table-responsive text-white p-1">
+                        <h3 class="text-center py-2 my-bg-1 titulo">Tabla de Cotización</h3>
+                        <table id="table-cotizacion" class="table table-borderless table-sm my-bg-dark-2">
+                            <thead class="text-white">
+                                <tr class="border-bottom">
+                                    <th colspan="2" scope="col"></th>
+                                    <th scope="col"><img class="d-block" src="assets/img/countries/icon-usa.jpg">USD</th>
+                                    <th scope="col"><img class="d-block" src="assets/img/countries/icon-eu.jpg">EUR</th>
+                                    <th scope="col"><img class="d-block" src="assets/img/countries/icon-gb.jpg">GBP</th>
+                                    <th scope="col"><img class="d-block" src="assets/img/countries/icon-japon.jpg">JPY</th>
+                                    <th scope="col"><img class="d-block" src="assets/img/countries/icon-china.jpg">CNY</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center text-white">
+                                <tr>
+                                    <td rowspan="2"><img class="mt-3" src="assets/img/countries/icon-usa.jpg"></td>
+                                    <th>1 USD</th>
+                                    <td *ngFor="let rate of listRates[0].rates">
+                                        <p>{{rate | number:'1.6-6'}}</p>
+                                    </td>
+                                </tr>
+                                <tr class="border-bottom">
+                                    <th>Inverso</th>
+                                    <td *ngFor="let rate of listRates">
+                                        <p>{{rate.rates[0] | number:'1.6-6'}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2"><img class="mt-3" src="assets/img/countries/icon-eu.jpg"></td>
+                                    <th>1 EUR</th>
+                                    <td *ngFor="let rate of listRates[1].rates">
+                                        <p>{{rate | number:'1.6-6'}}</p>
+                                    </td>
+                                </tr>
+                                <tr class="border-bottom">
+                                    <th>Inverso</th>
+                                    <td *ngFor="let rate of listRates">
+                                        <p>{{rate.rates[1] | number:'1.6-6'}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2"><img class="mt-3" src="assets/img/countries/icon-gb.jpg"></td>
+                                    <th>1 GBP</th>
+                                    <td *ngFor="let rate of listRates[2].rates">
+                                        <p>{{rate | number:'1.6-6'}}</p>
+                                    </td>
+                                </tr>
+                                <tr class="border-bottom">
+                                    <th>Inverso</th>
+                                    <td *ngFor="let rate of listRates">
+                                        <p>{{rate.rates[2] | number:'1.6-6'}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2"><img class="mt-3" src="assets/img/countries/icon-japon.jpg"></td>
+                                    <th>1 JPY</th>
+                                    <td *ngFor="let rate of listRates[3].rates">
+                                        <p>{{rate | number:'1.6-6'}}</p>
+                                    </td>
+                                </tr>
+                                <tr class="border-bottom">
+                                    <th>Inverso</th>
+                                    <td *ngFor="let rate of listRates">
+                                        <p>{{rate.rates[3] | number:'1.6-6'}}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2"><img class="mt-3" src="assets/img/countries/icon-china.jpg"></td>
+                                    <th>1 CNY</th>
+                                    <td *ngFor="let rate of listRates[4].rates">
+                                        <p>{{rate | number:'1.6-6'}}</p>
+                                    </td>
+                                </tr>
+                                <tr class="border-bottom">
+                                    <th>Inverso</th>
+                                    <td *ngFor="let rate of listRates">
+                                        <p>{{rate.rates[4] | number:'1.6-6'}}</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                
+                <form class="text-white px-3 py-2 bg-gradient-1 border-radius">
+                    <p class="text-center border-radius titulo">Conversor</p>
+                    <div class="form-group">
+                        <label for="fromValue">Cantidad</label>
+                        <input type="number" name="fromValue" class="form-control" id="fromValue" [(ngModel)]="fromValue">
+                    </div>
+                    <div class="form-group">
+                        <label for="fromType">De</label>
+                        <select class="form-control" id="fromType" name="fromType" [(ngModel)]="fromType">
+                            <option value="USD">USD Dólares EEUU</option>
+                            <option value="JPY">Yen Japonés</option>
+                            <option value="EUR">Euro</option>
+                            <option value="CNY">Yuan Chino</option>
+                            <option value="GBP">Libra Esterlina</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="toType">A</label>
+                        <select class="form-control" id="toType" name="toType" [(ngModel)]="toType">
+                            <option value="USD">USD Dólares EEUU</option>
+                            <option value="JPY">Yen Japonés</option>
+                            <option value="EUR">Euro</option>
+                            <option value="CNY">Yuan Chino</option>
+                            <option value="GBP">Libra Esterlina</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="resultado">Resultado</label>
+                        <input type="text" id="resultado" class="form-control" disabled value={{resultService}}>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-warning form-control text-black-100" (click)="calculate()"><strong>Convertir</strong><i id="iconos-flecha" class="fas fa-arrow-right "></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,14 @@
+img{
+    width: 4em;
+    height: 4em;
+}
+.bg-gradiant{
+    background: linear-gradient(to right, #3e295b , #092030);
+}
+.shadow-light{
+    box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
+}
+.card{
+    background: none;
+    border: none;
+}

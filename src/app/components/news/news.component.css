@@ -1,0 +1,19 @@
+.imgFondo{
+    background-image: url("../../../assets/img/news/sport.jpg");
+
+      /* Para que la imagen de fondo no se repita */
+      background-repeat: no-repeat;
+
+      /* La imagen se fija en la ventana de visualización para que la altura de la imagen no supere a la del contenido */
+      background-attachment: fixed;
+
+      /* La imagen de fondo se reescala automáticamente con el cambio del ancho de ventana del navegador */
+      background-size: cover;
+}
+.btn-nav-news:hover{
+  color: #0DA4FD;
+  border-bottom: 3px solid #0DA4FD;
+}
+.icon-size-nav{
+  font-size: 40px;
+}

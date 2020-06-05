@@ -1,0 +1,14 @@
+.bg-gradient-1{
+    background: linear-gradient(to top, #10A385 , #045746);
+}
+#iconos-flecha{
+    float: right; font-size: 25px; color: #ffffff;
+}
+.my-bg-1{
+    background: #045746;
+}
+
+#table-cotizacion img{
+    height: 2em;
+    width: 3em;
+}

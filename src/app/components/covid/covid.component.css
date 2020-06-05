@@ -1,0 +1,12 @@
+#tabla-scroll{
+    overflow: scroll;
+    height: 400px;
+}
+#ubicacion .form-control{
+    background: rgb(60,60,60);
+    color: #ffffff;
+}
+
+.form-control{
+    background: none;
+}

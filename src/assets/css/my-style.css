@@ -1,0 +1,38 @@
+@font-face{
+    font-family: "Roboto Bold";
+    src: url("../../../assets/font/Roboto-Bold.ttf");
+    font-family: "Roboto";
+    src: url("../../../assets/font/Roboto-Thin.ttf");
+}
+.my-text{
+    font-family: "Roboto";
+    font-size:160% ;
+}
+.my-text-2{
+    font-family: "Roboto";
+    font-size:110% ;
+    color: #ffffff;
+}
+.titulo{
+    font-family: "Roboto";
+    font-size: 40px ;
+    color: #ffffff;
+}
+.bg-transparent{
+    background: rgba(0, 0, 0, 1);
+}
+.my-bg-dark-1{
+    background: rgb(30,30,30);
+}
+.my-bg-dark-2{
+    background: rgb(37,37,37);
+}
+.my-bg-dark-3{
+    background: rgb(60,60,60);
+}
+.border-radius{
+    border-radius: 15px;
+}
+.border-bottom{
+    border-bottom: 5px solid #ffffff;
+}

@@ -1,0 +1,30 @@
+.icon-footer{
+    background: rgb(60,60,60);
+    border-radius: 20px;
+    padding: 10px;
+}
+.icon-networks{
+    font-size: 25px;
+    border-radius: 5px;
+}
+.facebook{
+    color: #3b5998;
+}
+.facebook:hover{
+    color: #ffffff;
+    background: #3b5998;
+}
+.twitter{
+    color: #00acee;
+}
+.twitter:hover{
+    color: #ffffff;
+    background: #00acee;
+}
+.instagram{
+    color: #B227E0;
+}
+.instagram:hover{
+    color: #ffffff;
+    background: linear-gradient(to right, #B227E0, #FFA417);
+}
